@@ -2,7 +2,10 @@ FROM golang:1.23.1
 ARG PORT
 
 # COPY source destination
-COPY ./learn-go-cicd /bin/learn-go-cicd
+#COPY ./learn-go-cicd /bin/learn-go-cicd
+COPY . /bin/learn-go-cicd
+
+RUN go build -o /bin/learn-go-cicd
 
 # Specify Port the server will use
 ENV PORT=$PORT
